@@ -10,6 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
  @RestController
- public class PromotionController {
+ public class RewardController {
 
  }

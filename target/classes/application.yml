@@ -24,7 +24,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: promotion
+          group: reward
           destination: phoneseller
           contentType: application/json
         event-out:
@@ -65,7 +65,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: promotion
+          group: reward
           destination: phoneseller
           contentType: application/json
         event-out:

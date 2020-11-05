@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: promotion
+  name: reward
   namespace: pp82
   labels:
-    app: promotion
+    app: reward
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: promotion
+      app: reward
   template:
     metadata:
       labels:
-        app: promotion
+        app: reward
     spec:
       containers:
-        - name: promotion
-#          image: username/promotion:latest
-          image: admin37.azurecr.io/promotion:latest
+        - name: reward
+#          image: username/reward:latest
+          image: admin22.azurecr.io/reward:latest
           ports:
             - containerPort: 8080
           readinessProbe:

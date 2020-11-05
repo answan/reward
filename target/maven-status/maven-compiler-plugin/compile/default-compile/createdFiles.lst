@@ -1,11 +1,11 @@
-phoneseller\PromoCancelled.class
-phoneseller\PromoCompleted.class
+phoneseller\RewardCancelled.class
+phoneseller\RewardRepository.class
+phoneseller\RewardCompleted.class
 phoneseller\AbstractEvent$1.class
 phoneseller\PolicyHandler.class
 phoneseller\config\kafka\KafkaProcessor.class
-phoneseller\PromotionApplication.class
-phoneseller\PromotionController.class
+phoneseller\RewardController.class
+phoneseller\RewardApplication.class
 phoneseller\AbstractEvent.class
 phoneseller\PayCompleted.class
-phoneseller\Promotion.class
-phoneseller\PromotionRepository.class
+phoneseller\Reward.class

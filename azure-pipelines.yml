@@ -14,7 +14,7 @@ variables:
   # containerRegistryDockerConnection: 'acr'
   # environment: 'aks.default'
 - name: imageRepository
-  value: 'promotion'
+  value: 'reward'
 - name: dockerfilePath
   value: '**/Dockerfile'
 - name: tag

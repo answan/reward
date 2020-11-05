@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler{
 
     @Autowired
-    PromotionRepository promotionRepository;
+    RewardRepository rewardRepository;
 
 
     @StreamListener(KafkaProcessor.INPUT)
@@ -25,15 +25,15 @@ public class PolicyHandler{
 
         // 비동기 방식으로 카프카 리스너를 통해 결제가 완료된 이벤트를 파악 -> 프로모션 포인트 제공
         if(payCompleted.isMe()){
-            System.out.println("promotion_policy_wheneverPayCompleted_PointSave");
+            System.out.println("reward_policy_wheneverPayCompleted_PointSave");
 
-            Promotion promotion = new Promotion();
-            promotion.setOrderId(payCompleted.getOrderId());
+            Reward reward = new Reward();
+            reward.setOrderId(payCompleted.getOrderId());
             if(payCompleted.getPrice() != null && payCompleted.getPrice() > 0) {
-                promotion.setPoint(payCompleted.getPrice() * 0.1);
-                promotion.setProcess("Payed");
+                reward.setPoint(payCompleted.getPrice() * 0.1);
+                reward.setProcess("Payed");
             }
-            promotionRepository.save(promotion);
+            rewardRepository.save(reward);
 
             System.out.println("##### listener PayComplete : " + payCompleted.toJson());
         }

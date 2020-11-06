@@ -14,16 +14,10 @@ public class PolicyHandler{
     @Autowired
     RewardRepository rewardRepository;
 
-
-    @StreamListener(KafkaProcessor.INPUT)
-    public void onStringEventListener(@Payload String eventString){
-
-    }
-
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverPayCompleted_PointSave(@Payload PayCompleted payCompleted){
 
-        // 비동기 방식으로 카프카 리스너를 통해 결제가 완료된 이벤트를 파악 -> 프로모션 포인트 제공
+        // 비동기 방식으로 카프카 리스너를 통해 결제가 완료된 이벤트를 확인하여 -> Reward 제공
         if(payCompleted.isMe()){
             System.out.println("reward_policy_wheneverPayCompleted_PointSave");
 
@@ -37,6 +31,13 @@ public class PolicyHandler{
 
             System.out.println("##### listener PayComplete : " + payCompleted.toJson());
         }
+    }
+
+
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void onStringEventListener(@Payload String eventString){
+
     }
 
 }

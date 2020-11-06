@@ -46,6 +46,10 @@ logging:
     org.springframework.cloud: debug
 server:
   port: 8086
+
+api:
+  url:
+    reward: http://localhost:8086
 ---
 
 spring:
@@ -80,3 +84,6 @@ spring:
 #  command:
 #    default:
 #      execution.isolation.thread.timeoutInMilliseconds: 610
+api:
+  url:
+    reward: ${configurl}

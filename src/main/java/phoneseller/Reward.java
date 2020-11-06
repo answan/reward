@@ -25,6 +25,12 @@ public class Reward {
         System.out.println(this.toString());
         System.out.println("Reward persist");
 
+        try {
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         if("Payed".equals(process) && point > 0){
             // 결제 완료된 이벤트를 통해 프로모션 제공 완료 처리
 

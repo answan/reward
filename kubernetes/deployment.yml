@@ -30,12 +30,11 @@ spec:
             periodSeconds: 5
             failureThreshold: 10
           livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 5
             periodSeconds: 5
+            timeoutSeconds: 2
             failureThreshold: 5
           resources:
             limits:

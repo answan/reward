@@ -31,14 +31,14 @@ spring:
           destination: phoneseller
           contentType: application/json
 
-#feign:
-#  hystrix:
-#    enabled: true
-#
-#hystrix:
-#  command:
-#    default:
-#      execution.isolation.thread.timeoutInMilliseconds: 610
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
 
 logging:
   level:
@@ -76,14 +76,14 @@ spring:
           destination: phoneseller
           contentType: application/json
 
-#feign:
-#  hystrix:
-#    enabled: true
-#
-#hystrix:
-#  command:
-#    default:
-#      execution.isolation.thread.timeoutInMilliseconds: 610
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
 api:
   url:
     reward: ${configurl}
